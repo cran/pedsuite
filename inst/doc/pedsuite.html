@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Getting started with the ped suite</title>
+
+<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Getting started with the ped suite</h1>
+
+
+
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<p>The following command installs the latest official versions of the <strong>ped suite</strong> packages:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;pedsuite&quot;</span>)</span></code></pre></div>
+<p>Alternatively, you can install the development versions from GitHub:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;devtools&quot;)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;magnusdv/pedsuite&quot;</span>)</span></code></pre></div>
+<p>If you only need a few of the packages, you may choose to install them individually instead of the entire collection.</p>
+<hr />
+</div>
+<div id="a-quick-tour" class="section level2">
+<h2>A quick tour</h2>
+<p>The aim of this vignette is to illustrate just a few of the possibilities of the <strong>ped suite</strong> packages. Of course, we barely scratch the surface here, and several packages are not even mentioned. For a more comprehensive overview, I recommend the <a href="https://magnusdv.github.io/pedsuite/articles/web_only/publications.html#book">book</a>.</p>
+<p>To get started we load the <strong>pedsuite</strong> package, which is a convenient shortcut for loading all the <a href="https://magnusdv.github.io/pedsuite/#core-packages">core packages</a>, making their methods available in the current R session.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pedsuite)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: forrel</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: pedtools</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: pedmut</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: pedprobr</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: ribd</span></span></code></pre></div>
+<div id="create-a-pedigree-pedtools" class="section level3">
+<h3>1. Create a pedigree (<strong>pedtools</strong>)</h3>
+<p>We begin by creating and plotting a pedigree with a child of first cousins:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">cousinPed</span>(<span class="dv">1</span>, <span class="at">child =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" width="40%" style="display: block; margin: auto;" /></p>
+<p>For symmetry let us change the sex of individual 3. We also highlight the child by hatching his symbol, and we only include his ID label in the plot.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">swapSex</span>(x, <span class="at">ids =</span> <span class="dv">3</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Changing sex of spouses as well: 4</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="at">labs =</span> <span class="dv">9</span>, <span class="at">hatched =</span> <span class="dv">9</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" width="40%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="calculate-the-inbreeding-coefficient-ribd" class="section level3">
+<h3>2. Calculate the inbreeding coefficient (<strong>ribd</strong>)</h3>
+<p>The inbreeding coefficient <span class="math inline">\(f\)</span> of a pedigree member is defined as the probability of <em>autozygosity</em> at a random autosomal locus. That is, the probability that the two homologous alleles have the same origin within the pedigree.</p>
+<p>For a child of first cousins one can work out by pen and paper that <span class="math inline">\(f = 1/16\)</span>. Alternatively, we can calculate it with the <strong>ribd</strong> function <code>inbreeding()</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inbreeding</span>(x, <span class="at">ids =</span> <span class="dv">9</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.0625</span></span></code></pre></div>
+<p>The output agrees with <span class="math inline">\(f = 1/16\)</span>.</p>
+</div>
+<div id="realised-inbreeding-ibdsim2" class="section level3">
+<h3>3. Realised inbreeding (<strong>ibdsim2</strong>)</h3>
+<p>For any particular child of first cousins, the actual fraction of the genome (except X &amp; Y) that is autozygous is called the <em>realised inbreeding</em> coefficient, denoted <span class="math inline">\(f_R\)</span>. Clearly, the expected value of <span class="math inline">\(f_R\)</span> is the pedigree-based coefficient <span class="math inline">\(f\)</span> calculated above, but there is in fact substantial variance.</p>
+<p>We can simulate the distribution of <span class="math inline">\(f_R\)</span> with the <strong>ibdsim2</strong> package. Since this is not a core package we must load it separately.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ibdsim2)</span></code></pre></div>
+<p>First, we use the function <code>ibdsim()</code> to simulate the recombination process in the entire pedigree:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">=</span> <span class="fu">ibdsim</span>(x, <span class="at">N =</span> <span class="dv">200</span>, <span class="at">seed =</span> <span class="dv">123</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Simulation parameters:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Simulations  : 200</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Chromosomes  : 1-22</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Genome length: 2753.93 Mb</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                2602.29 cM (male)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                4180.42 cM (female)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Recomb model : chi</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Target indivs: 1-9</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Skip recomb  : -</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Total time used: 6.27 secs</span></span></code></pre></div>
+<p>Now extract the autozygous segments of each simulation.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fr <span class="ot">=</span> <span class="fu">realisedInbreeding</span>(sims, <span class="at">id =</span> <span class="dv">9</span>)</span></code></pre></div>
+<p>Here is a summary of the first 6 simulations, including the number of segments and various length statistics:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(fr<span class="sc">$</span>perSimulation)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   nSeg  meanLen   totLen   maxLen    minLen      fReal</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   18 12.04964 216.8935 35.11428 0.2658601 0.07875777</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   12 14.89156 178.6987 48.86386 0.2469086 0.06488857</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3   16 16.54443 264.7109 66.83864 0.4071844 0.09612108</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    9 24.45525 220.0973 61.67048 0.9938968 0.07992111</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5   20 15.68533 313.7066 53.35902 1.3336400 0.11391226</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   13 14.04913 182.6387 41.60738 0.1404723 0.06631925</span></span></code></pre></div>
+<p>And here is a histogram of the realised inbreeding coefficients (given in the right-most column above):</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(fr<span class="sc">$</span>perSimulation<span class="sc">$</span>fReal, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.15</span>), <span class="at">breaks =</span> <span class="dv">16</span>, <span class="at">xlab =</span> <span class="st">&quot;f_R&quot;</span>, <span class="at">main =</span> <span class="cn">NULL</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected value</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">16</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" width="80%" style="display: block; margin: auto;" /></p>
+<p>As we see, the distribution centres around the expectation <span class="math inline">\(f = 1/16 = 0.0625\)</span> (red vertical line) but has substantial spread. The sample standard deviation can be found in <code>fr$stDev</code>, which in our case is 0.024.</p>
+</div>
+<div id="marker-simulation-forrel" class="section level3">
+<h3>4. Marker simulation (<strong>forrel</strong>)</h3>
+<p>Note that everything we have done so far has been purely theoretical, with no markers involved. In medical and forensic applications we usually work with genetic data in the form of marker genotypes, so let us simulate such a dataset for our family.</p>
+<p>The <code>markerSim()</code> function of the <strong>forrel</strong> package simulates the genotypes of pedigree members for a specific type of markers. For instance, here we produce 500 SNPs with alleles <code>A</code> and <code>B</code> (equally frequent, by default):</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">markerSim</span>(x, <span class="at">N =</span> <span class="dv">500</span>, <span class="at">alleles =</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Unconditional simulation of 500 autosomal markers.</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Individuals: 1, 2, 3, 4, 5, 6, 7, 8, 9</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Allele frequencies:</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    A   B</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  0.5 0.5</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Mutation model: No </span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Simulation finished.</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Calls to `likelihood()`: 0.</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Total time used: 0 seconds.</span></span></code></pre></div>
+<p>We can see the genotypes of the first few markers by printing <code>y</code> to the console.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>y</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  id fid mid sex &lt;1&gt; &lt;2&gt; &lt;3&gt; &lt;4&gt; &lt;5&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   1   *   *   1 A/B A/B A/B B/B A/A</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   2   *   *   2 A/B A/B B/B A/B B/B</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   3   1   2   2 B/B A/B A/B B/B A/B</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   4   *   *   1 A/A A/A B/B A/A B/B</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   5   1   2   1 B/B A/B A/B A/B A/B</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   6   *   *   2 A/B A/B B/B A/B A/B</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   7   4   3   1 A/B A/A A/B A/B B/B</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   8   5   6   2 B/B A/B B/B A/B A/B</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   9   7   8   1 B/B A/A A/B B/B B/B</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Only 5 (out of 500) markers are shown.</span></span></code></pre></div>
+</div>
+<div id="inference-of-pairwise-relationships-forrel" class="section level3">
+<h3>5. Inference of pairwise relationships (<strong>forrel</strong>)</h3>
+<p>If this was a real dataset, a natural quality control step would be to check correctness of the pedigree. One way to do this is to use the data to estimate each pairwise relationship, and compare the result with the pedigree. The function <code>checkPairwise()</code> does all of this, and presents the result in a relationship triangle.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">checkPairwise</span>(y, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning:</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Individual &#39;9&#39; is inbred (f = 0.0625)</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Kappa coefficients are only defined for non-inbred individuals.</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" width="60%" style="display: block; margin: auto;" /></p>
+<p>The plot shows that all pairwise estimates are near their expected location in the triangle. (The yellow symbols correspond to pairs involving the inbred child, which don’t have a well-defined position in the triangle.)</p>
+<hr />
+</div>
+</div>
+<div id="where-to-go-from-here" class="section level2">
+<h2>Where to go from here</h2>
+<p>If you enjoyed this quick tour and would like more details, you should check out the GitHub README files of the packages that interest you.</p>
+<p>There is also the <a href="https://cran.r-project.org/package=pedtools/vignettes/pedtools.html">pedtools vignette</a>, with a lot more details on how to create and plot pedigrees in R.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
