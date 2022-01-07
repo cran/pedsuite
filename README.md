@@ -4,6 +4,11 @@
 # The **ped suite**: R packages for pedigree analysis
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/pedsuite)](https://CRAN.R-project.org/package=pedsuite)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/pedsuite?color=yellow)](https://cran.r-project.org/package=pedsuite)
+[![](https://cranlogs.r-pkg.org/badges/last-month/pedsuite?color=yellow)](https://cran.r-project.org/package=pedsuite)
 <!-- badges: end -->
 
 The **ped suite** is a collection of R packages for pedigree analysis,
@@ -13,7 +18,7 @@ to be solved in a few lines of code.
 
 <img src="man/figures/logos-pedsuite-wheel_1.png" width="100%" style="display: block; margin: auto;" />
 
-#### Core packages
+### Core packages
 
 At the centre of the **ped suite** we find the package **pedtools**, on
 which all the others depend. In addition, several packages contain basic
@@ -22,16 +27,16 @@ packages:
 
 -   [pedtools](https://github.com/magnusdv/pedtools): Creating and
     working with pedigrees and marker data
--   [ribd](https://github.com/magnusdv/ribd): Computation of
-    pedigree-based relatedness coefficients
--   [pedprobr](https://github.com/magnusdv/pedprobr): Marker
-    probabilities and pedigree likelihoods
--   [pedmut](https://github.com/magnusdv/pedmut): Mutation models for
-    pedigree likelihood computations
 -   [forrel](https://github.com/magnusdv/forrel): Forensic pedigree
     analysis and relatedness analysis
+-   [pedprobr](https://github.com/magnusdv/pedprobr): Marker
+    probabilities and pedigree likelihoods
+-   [ribd](https://github.com/magnusdv/ribd): Computation of
+    pedigree-based relatedness coefficients
+-   [verbalisr](https://github.com/magnusdv/verbalisr): Textual
+    descriptions of pedigree relationships
 
-#### Specialised packages
+### Specialised packages
 
 The following packages are devoted to special applications:
 
@@ -43,10 +48,12 @@ The following packages are devoted to special applications:
     reconstruction
 -   [paramlink2](https://github.com/magnusdv/paramlink2): Parametric
     linkage analysis
+-   [pedmut](https://github.com/magnusdv/pedmut): Mutation models for
+    pedigree likelihood computations
 -   [segregatr](https://github.com/magnusdv/segregatr): Segregation
     analysis for clinical variant interpretation
 
-#### Retired packages
+### Retired packages
 
 These packages have been superseded by other packages and are no longer
 compatible with the rest of the **ped suite**. They are maintained only
@@ -63,20 +70,20 @@ for legacy purposes and should not be used in new projects.
     ([Leblois, Estoup &
     Rousset](http://www1.montpellier.inra.fr/CBGP/software/ibdsim/index.html)).)
 
-#### Imported packages
+### Imported packages
 
--   [kinship2](https://CRAN.R-project.org/package=IBDsim): All pedigree
-    plots in the **ped suite** are internally made with the very nice
-    **kinship2** package ([Sinnwell, Therneau &
+-   [kinship2](https://CRAN.R-project.org/package=kinship2): All
+    pedigree plots in the **ped suite** are internally made by importing
+    the plotting feature of **kinship2** ([Sinnwell, Therneau &
     Schaid](https://doi.org/10.1159/000363105)). Creating nice pedigree
     plots is a highly non-trivial matter, so if you use the **ped
-    suite** to create pedigree plots for publications, please also
-    credit **kinship2**.
+    suite** to make pedigree plots for publications, please also credit
+    **kinship2**.
 
 ## QuickPed - an online pedigree creator
 
-In addition to the R packages, the **ped suite** also includes
-[QuickPed](https://magnusdv.github.io/pedsuite/articles/web_only/quickped.html),
-a free interactive program for drawing pedigrees. Read more about it by
-following the link, or simply try it out here:
-<https://magnusdv.shinyapps.io/quickped>.
+In addition to the R packages, the **ped suite** also includes QuickPed,
+a free interactive program for creating and exploring pedigrees. Read
+more about it
+[here](https://magnusdv.github.io/pedsuite/articles/web_only/quickped.html),
+or simply try it out: <https://magnusdv.shinyapps.io/quickped>.
