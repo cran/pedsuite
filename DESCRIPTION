@@ -1,7 +1,7 @@
 Package: pedsuite
 Title: Easy Installation of the 'ped suite' Packages for Pedigree
         Analysis
-Version: 1.1.0
+Version: 1.2.0
 Authors@R: c(
     person("Magnus Dehli", "Vigeland", , "m.d.vigeland@medisin.uio.no", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-9134-4962")),
@@ -22,12 +22,12 @@ Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2022-01-07 12:52:43 UTC; magnusdv
+Packaged: 2023-06-26 23:53:50 UTC; magnusdv
 Author: Magnus Dehli Vigeland [aut, cre]
     (<https://orcid.org/0000-0002-9134-4962>),
   Thore Egeland [aut] (<https://orcid.org/0000-0002-3465-8885>)
 Maintainer: Magnus Dehli Vigeland <m.d.vigeland@medisin.uio.no>
 Repository: CRAN
-Date/Publication: 2022-01-07 13:12:42 UTC
+Date/Publication: 2023-06-27 00:40:02 UTC
