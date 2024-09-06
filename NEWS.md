@@ -1,3 +1,10 @@
+# pedsuite 1.3.1
+
+* New package: **pedFamilias**
+* Add several app homepages
+* Minor code updates
+
+
 # pedsuite 1.2.0
 
 * Update Github Actions workflow
