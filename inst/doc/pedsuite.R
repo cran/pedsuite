@@ -7,11 +7,11 @@ knitr::opts_chunk$set(
   fig.align = "center")
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  install.packages("pedsuite")
+# install.packages("pedsuite")
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  # install.packages("devtools")
-#  devtools::install_github("magnusdv/pedsuite")
+# # install.packages("devtools")
+# devtools::install_github("magnusdv/pedsuite")
 
 ## -----------------------------------------------------------------------------
 library(pedsuite)

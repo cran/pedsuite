@@ -8,8 +8,10 @@
 #' @import pedprobr
 #' @import forrel
 #' @import verbalisr
+#' @import norSTR
 #'
 #' @importFrom dvir jointDVI
+#' @importFrom ibdfindr findIBD
 #' @importFrom ibdsim2 ibdsim
 #' @importFrom paramlink2 lod
 #' @importFrom pedbuildr reconstruct
